@@ -1,0 +1,12 @@
+Test cases for CPP Modules;
+
+1- CPP00
+Ex01:
+- CTRL + D
+- empty line
+- empty data(first, last name, etc)
+- invalid command 
+- invalid search (empty line, string, etc)
+- Add more than 8 contacts, should replace the first one.
+- failure to add 9th contact -> result in empty 
+
