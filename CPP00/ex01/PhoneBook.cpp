@@ -6,7 +6,7 @@
 /*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 01:13:20 by ayman_marzo       #+#    #+#             */
-/*   Updated: 2024/03/29 03:13:44 by ayman_marzo      ###   ########.fr       */
+/*   Updated: 2024/03/29 14:32:25 by ayman_marzo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ void PhoneBook::addContact()
     // nextIndex should be 0 to replace the first (oldest) contact.
     if (currentSize >= 8) {
         // Overwrite the contact at the current value of nextIndex.
-        if (!contacts[nextIndex].setDetails()) {
+        if (!contacts[nextIndex].setDetails()) 
+        {
             std::cout << "Contact information is incomplete. The contact was not updated.\n";
             return; // Early return if the details were not successfully set.
         }
