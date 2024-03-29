@@ -11,12 +11,15 @@ private:
     std::string nickname;
     std::string phoneNumber;
     std::string darkestSecret;
+    bool isValid;
 
 public:
-    Contact();
-    void setDetails();
+    Contact() : isValid(false) {}
+    bool setDetails();
     void displayContactSummary(int index) const;
     void displayFullDetails() const;
+    bool isValidContact() const { return isValid; }
+
 };
 
 #endif

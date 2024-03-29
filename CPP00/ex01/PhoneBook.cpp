@@ -17,12 +17,26 @@
 
 PhoneBook::PhoneBook() : currentSize(0), nextIndex(0) {}
 
-void PhoneBook::addContact() 
-{
-    if (currentSize < 8)
-        contacts[currentSize++].setDetails();
-    else
-        contacts[nextIndex].setDetails();
+void PhoneBook::addContact() {
+    if (currentSize < 8) {
+        // Attempt to set details for a new contact at the currentSize position
+        if (contacts[currentSize].setDetails()) {
+            // If details are successfully set, then and only then increment currentSize
+            currentSize++;
+        } else {
+            // If setDetails returned false, decrement currentSize as we previously incremented it
+            // This corrects for the case where setDetails fails after currentSize was incremented
+            std::cout << "Contact information is incomplete. The contact was not added.\n";
+        }
+    } else {
+        // If the phonebook is full, attempt to overwrite the contact at nextIndex
+        if (!contacts[nextIndex].setDetails()) {
+            // If setDetails returns false, inform the user, but do not decrement nextIndex
+            // because we are overwriting an existing contact, not adding a new one
+            std::cout << "Contact information is incomplete. The contact was not updated.\n";
+        }
+    }
+    // Update nextIndex only if a new contact is successfully added or an existing one is updated
     nextIndex = (nextIndex + 1) % 8;
 }
 

@@ -14,45 +14,45 @@
 #include <iostream>
 #include <iomanip>
 
-Contact::Contact() {}
-
-void Contact::setDetails() 
+bool Contact::setDetails() 
 {
     std::cout << "Enter first name: ";
     std::getline(std::cin, firstName);
     if (firstName.empty())
     {
         std::cout << "First name cannot be empty. Please try again.\n";
-        return;
+        return false;
     }
     std::cout << "Enter last name: ";
     std::getline(std::cin, lastName);
     if (lastName.empty())
     {
         std::cout << "Last name cannot be empty. Please try again.\n";
-        return;
+        return false;
     }
     std::cout << "Enter nickname: ";
     std::getline(std::cin, nickname);
     if (nickname.empty())
     {
         std::cout << "Nickname cannot be empty. Please try again.\n";
-        return;
+        return false;
     }
     std::cout << "Enter phone number: ";
     std::getline(std::cin, phoneNumber);
     if (phoneNumber.empty())
     {
         std::cout << "Phone number cannot be empty. Please try again.\n";
-        return;
+        return false;
     }
     std::cout << "Enter darkest secret: ";
     std::getline(std::cin, darkestSecret);
     if (darkestSecret.empty())
     {
         std::cout << "Darkest secret cannot be empty. Please try again.\n";
-        return;
+        return false;
     }
+    isValid = true;
+    return true;
 }
 
 void Contact::displayContactSummary(int index) const 
