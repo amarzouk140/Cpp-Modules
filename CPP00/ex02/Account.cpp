@@ -6,7 +6,7 @@
 /*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 15:06:59 by ayman_marzo       #+#    #+#             */
-/*   Updated: 2024/03/29 17:01:26 by ayman_marzo      ###   ########.fr       */
+/*   Updated: 2024/03/29 17:21:05 by ayman_marzo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ int	Account::_nbAccounts = 0;
 int	Account::_totalAmount = 0;
 int	Account::_totalNbDeposits = 0;
 int	Account::_totalNbWithdrawals = 0;
-
-
 
 int	Account::getNbAccounts()
 {
@@ -42,7 +40,7 @@ int	Account::getNbWithdrawals()
 	return (_totalNbWithdrawals);
 }
 
-void	Account::_displayTimestamp()
+void Account::_displayTimestamp()
 {
 	std::time_t now = time(0);
 
