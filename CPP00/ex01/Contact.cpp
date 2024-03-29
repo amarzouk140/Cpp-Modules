@@ -16,6 +16,7 @@
 
 bool Contact::setDetails() 
 {
+    std:: string temp;
     std::cout << "Enter first name: ";
     std::getline(std::cin, firstName);
     if (firstName.empty())

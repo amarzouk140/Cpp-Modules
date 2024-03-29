@@ -17,27 +17,30 @@
 
 PhoneBook::PhoneBook() : currentSize(0), nextIndex(0) {}
 
-void PhoneBook::addContact() {
-    if (currentSize < 8) {
-        // Attempt to set details for a new contact at the currentSize position
+void PhoneBook::addContact() 
+{
+    // If adding the first contact after reaching maximum size,
+    // nextIndex should be 0 to replace the first (oldest) contact.
+    if (currentSize >= 8) {
+        // Overwrite the contact at the current value of nextIndex.
+        if (!contacts[nextIndex].setDetails()) {
+            std::cout << "Contact information is incomplete. The contact was not updated.\n";
+            return; // Early return if the details were not successfully set.
+        }
+        // After successfully adding a contact, increment nextIndex for the next addition.
+        nextIndex = (nextIndex + 1) % 8; // Ensure nextIndex wraps around to 0 after reaching 7.
+    } else {
+        // The phone book has not yet reached its maximum size.
         if (contacts[currentSize].setDetails()) {
-            // If details are successfully set, then and only then increment currentSize
+            // Increment currentSize only if the contact details were successfully set.
             currentSize++;
+            // Update nextIndex accordingly. Before reaching the maximum size,
+            // nextIndex should track currentSize to ensure it points to the oldest contact.
+            nextIndex = currentSize % 8;
         } else {
-            // If setDetails returned false, decrement currentSize as we previously incremented it
-            // This corrects for the case where setDetails fails after currentSize was incremented
             std::cout << "Contact information is incomplete. The contact was not added.\n";
         }
-    } else {
-        // If the phonebook is full, attempt to overwrite the contact at nextIndex
-        if (!contacts[nextIndex].setDetails()) {
-            // If setDetails returns false, inform the user, but do not decrement nextIndex
-            // because we are overwriting an existing contact, not adding a new one
-            std::cout << "Contact information is incomplete. The contact was not updated.\n";
-        }
     }
-    // Update nextIndex only if a new contact is successfully added or an existing one is updated
-    nextIndex = (nextIndex + 1) % 8;
 }
 
 void PhoneBook::searchContacts() const {
