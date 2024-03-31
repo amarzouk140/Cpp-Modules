@@ -6,7 +6,7 @@
 /*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 14:55:31 by amarzouk          #+#    #+#             */
-/*   Updated: 2024/03/30 15:12:53 by amarzouk         ###   ########.fr       */
+/*   Updated: 2024/03/31 14:11:50 by amarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void    writeInsideFolderRplace(std::string fileName, std::string s1, std::strin
 {
     std::string line;
     std::string str;
-    std::string str2;
     size_t pos;
     
     std::ifstream Myfile(fileName.c_str());
