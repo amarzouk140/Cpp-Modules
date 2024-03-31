@@ -6,7 +6,7 @@
 /*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 14:55:31 by amarzouk          #+#    #+#             */
-/*   Updated: 2024/03/31 14:11:50 by amarzouk         ###   ########.fr       */
+/*   Updated: 2024/03/31 14:28:22 by amarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void    writeInsideFolderRplace(std::string fileName, std::string s1, std::strin
     if(Myfile.is_open())
     {
         std::ofstream Myfile2((fileName + ".replace").c_str());
-        while (getline(Myfile, line))
+        while (std::getline(Myfile, line))
         {
             str += line;
             if(!Myfile.eof())
