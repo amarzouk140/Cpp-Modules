@@ -6,7 +6,7 @@
 /*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:58:34 by ayman_marzo       #+#    #+#             */
-/*   Updated: 2024/04/19 17:36:43 by ayman_marzo      ###   ########.fr       */
+/*   Updated: 2024/04/19 18:25:54 by ayman_marzo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 Fixed::Fixed()
 {
-    this->FixedPoint = 0;
+    FixedPoint = 0;
     std::cout << "Default Contractor is here!!" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &copy)
 {
-    FixedPoint = copy.getRawBits();
+    *this = copy;
     std::cout << "Copy Constracotr is here!!" << std::endl;
 }
 
 Fixed &Fixed::operator=(const Fixed &copy)
 {
     std::cout << "copy assigment operator is here!!!" << std::endl;
-    this->FixedPoint = copy.getRawBits();
+    this->FixedPoint = copy.FixedPoint;
     return (*this);
 }
 
@@ -36,13 +36,33 @@ Fixed::~Fixed()
     std::cout << "Destrcutor is here!!!" << std::endl;
 }
 
-int Fixed::getRawBits(void) const
+Fixed::Fixed(const int intger)
 {
-    std::cout << "getRawBits method is here!!" << std::endl;
-    return (FixedPoint);
+	std::cout << "Int constructor called" << std::endl;
+	FixedPoint = (intger * (1 << FractionalBits));
 }
 
-void Fixed::setRawBits(int const raw)
+Fixed::Fixed(const float FloatingPoint)
 {
-    FixedPoint = raw;
+	std::cout << "Float constructor called" << std::endl;
+	FixedPoint = roundf(FloatingPoint * (1 << FractionalBits));
+}
+
+float	Fixed::toFloat(void) const
+{
+	float	floatValue;
+
+	floatValue = FixedPoint * 1.0 / (1 << FractionalBits);
+	return (floatValue);
+}
+
+int		Fixed::toInt(void) const
+{
+	return (static_cast<int>(FixedPoint * 1.0 / (1 << FractionalBits)));
+}
+
+std::ostream &operator<<(std::ostream &os, const Fixed &fixed)
+{
+	os << fixed.toFloat();
+	return (os);
 }

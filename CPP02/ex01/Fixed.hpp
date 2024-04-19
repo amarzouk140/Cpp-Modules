@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 16:58:41 by ayman_marzo       #+#    #+#             */
-/*   Updated: 2024/04/19 18:07:04 by ayman_marzo      ###   ########.fr       */
+/*   Created: 2024/04/19 17:48:42 by ayman_marzo       #+#    #+#             */
+/*   Updated: 2024/04/19 18:23:06 by ayman_marzo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <string>
+#include <cmath>
 
 class Fixed
 {
@@ -27,9 +28,15 @@ class Fixed
     Fixed(const Fixed &copy);
     Fixed &operator=(const Fixed &copy);
     ~Fixed();
-    int getRawBits( void ) const;
-    void setRawBits( int const raw );
+    
+    Fixed(const int intger);
+    Fixed (const float FloatingPoint);
+    
+    float toFloat( void ) const;
+    int toInt( void ) const;
 
 };
+
+std::ostream&	operator<<(std::ostream& os, const Fixed &fixed);
 
 #endif
