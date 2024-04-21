@@ -6,7 +6,7 @@
 /*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 17:48:45 by ayman_marzo       #+#    #+#             */
-/*   Updated: 2024/04/19 18:21:43 by ayman_marzo      ###   ########.fr       */
+/*   Updated: 2024/04/21 22:26:41 by ayman_marzo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 int main( void ) 
 {
     Fixed a;
-    Fixed const b( 10 ); Fixed const c( 42.42f ); Fixed const d( b );
+    Fixed const b( 10 ); 
+    Fixed const c( 42.42f ); 
+    Fixed const d( b );
     a = Fixed( 1234.4321f );
     std::cout << "a is " << a << std::endl;
     std::cout << "b is " << b << std::endl;

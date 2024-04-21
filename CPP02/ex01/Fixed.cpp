@@ -6,7 +6,7 @@
 /*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:58:34 by ayman_marzo       #+#    #+#             */
-/*   Updated: 2024/04/19 18:25:54 by ayman_marzo      ###   ########.fr       */
+/*   Updated: 2024/04/21 22:05:55 by ayman_marzo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ Fixed::~Fixed()
 Fixed::Fixed(const int intger)
 {
 	std::cout << "Int constructor called" << std::endl;
-	FixedPoint = (intger * (1 << FractionalBits));
+	FixedPoint = (intger * (1 << FractionalBits)); // Shift all bits to the left by 8 places.
 }
 
 Fixed::Fixed(const float FloatingPoint)

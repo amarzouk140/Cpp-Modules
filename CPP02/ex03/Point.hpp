@@ -6,7 +6,7 @@
 /*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 15:31:12 by ayman_marzo       #+#    #+#             */
-/*   Updated: 2024/04/20 15:31:14 by ayman_marzo      ###   ########.fr       */
+/*   Updated: 2024/04/21 22:44:45 by ayman_marzo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ public:
 };
 
 
-bool bsp( Point const a, Point const b, Point const c, Point const point);
+bool bsp (Point const a, Point const b, Point const c, Point const point);
 
 #endif 

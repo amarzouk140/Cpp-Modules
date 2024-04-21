@@ -6,7 +6,7 @@
 /*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:58:34 by ayman_marzo       #+#    #+#             */
-/*   Updated: 2024/04/20 14:00:24 by ayman_marzo      ###   ########.fr       */
+/*   Updated: 2024/04/21 22:34:51 by ayman_marzo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,7 @@ Fixed::Fixed(const Fixed &fixed)
 }
 
 Fixed::~Fixed()
-{
-
-}
+{}
 
 int	Fixed::toInt() const
 {
