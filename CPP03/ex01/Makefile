@@ -6,11 +6,11 @@
 #    By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/24 15:13:08 by amarzouk          #+#    #+#              #
-#    Updated: 2024/04/24 15:36:28 by amarzouk         ###   ########.fr        #
+#    Updated: 2024/04/24 16:36:58 by amarzouk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ClapTrap
+NAME = ScavTrap
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98

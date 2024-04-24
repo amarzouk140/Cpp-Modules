@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/24 16:20:05 by amarzouk          #+#    #+#             */
-/*   Updated: 2024/04/24 16:32:09 by amarzouk         ###   ########.fr       */
+/*   Created: 2024/04/24 15:13:03 by amarzouk          #+#    #+#             */
+/*   Updated: 2024/04/24 15:21:54 by amarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class ScavTrap : public ClapTrap
 {
     public:
-    FragTrap();
-    FragTrap(const FragTrap& copy);
-    FragTrap &operator=(const FragTrap& copy);
-    ~FragTrap();
-    
-    FragTrap(const std::string &name, unsigned int healthPoints = 100, unsigned int energyPoints = 100, unsigned int attackDamage = 30);
-    void highFivesGuys(void);
+    ScavTrap();
+    ScavTrap(const ScavTrap& copy);
+    ScavTrap &operator=(const ScavTrap &copy);
+    ~ScavTrap();
 
+    ScavTrap(const std::string &name, unsigned int healthPoints = 100, unsigned int energyPoints = 50, unsigned int attackDamage = 20);
+
+    void attack(const std::string &target);
+    void guardGate();
+    
 };
+
 #endif
