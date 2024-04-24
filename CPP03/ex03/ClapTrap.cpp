@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 16:38:26 by amarzouk          #+#    #+#             */
-/*   Updated: 2024/04/23 10:11:08 by amarzouk         ###   ########.fr       */
+/*   Updated: 2024/04/24 23:41:51 by ayman_marzo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(): name(" "), healthPoints(10), energyPoints(10), attackDamage(0)
+ClapTrap::ClapTrap(): name(" "), healthPoints(100), energyPoints(50), attackDamage(20)
 {
     std::cout << "default constructor is called" << std::endl;
 }
@@ -41,7 +41,8 @@ ClapTrap &ClapTrap::operator=(const ClapTrap& copy)
     return *this;
 }
 
-ClapTrap::ClapTrap(const std::string& name,unsigned int healthPoints, unsigned int energyPoints, unsigned int attackDamage) : name(name), healthPoints(healthPoints), energyPoints(energyPoints), attackDamage(attackDamage)
+ClapTrap::ClapTrap(const std::string& name,unsigned int healthPoints, unsigned int energyPoints, unsigned int attackDamage) 
+: name(name), healthPoints(healthPoints), energyPoints(energyPoints), attackDamage(attackDamage)
 {
     std::cout << "ClapTrap " << name << " is created" << std::endl;
 }

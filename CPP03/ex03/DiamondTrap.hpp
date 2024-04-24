@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 16:43:01 by amarzouk          #+#    #+#             */
-/*   Updated: 2024/04/24 17:06:03 by amarzouk         ###   ########.fr       */
+/*   Updated: 2024/04/24 23:44:55 by ayman_marzo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ class DiamondTrap : public FragTrap, public ScavTrap
     
     void whoAmI();
 
-    // void attack(std::string const & target);
-    void displaystatus() const;
+    void attack(std::string const & target);
+    void currentStatus() const;
     
     
 };

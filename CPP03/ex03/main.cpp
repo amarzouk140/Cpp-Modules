@@ -3,38 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 16:38:21 by amarzouk          #+#    #+#             */
-/*   Updated: 2024/04/24 16:39:51 by amarzouk         ###   ########.fr       */
+/*   Updated: 2024/04/24 23:45:51 by ayman_marzo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main()
 {
-    FragTrap clap1("ayman",50, 30, 10);
-	clap1.currentStatus();
-    
-    clap1.attack("mahmoud");
-	clap1.currentStatus();
-
-    clap1.takeDamage(10);
-    clap1.currentStatus();
-
-    clap1.beRepaired(15);
-    clap1.currentStatus();
-    clap1.beRepaired(5);
-
-    clap1.highFivesGuys();
-    clap1.takeDamage(60);
-    clap1.attack("mahmoud");
-    clap1.takeDamage(60);
-
-    clap1.currentStatus();
-
-
-    return 0;
+    DiamondTrap trap("batman");
+    trap.whoAmI();
+    trap.currentStatus();
+    trap.attack("ayman");
+    trap.guardGate();
+    trap.highFivesGuys();
+    trap.currentStatus();
+    trap.takeDamage(50);
+    trap.currentStatus();
 }

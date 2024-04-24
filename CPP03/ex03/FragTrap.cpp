@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 16:19:55 by amarzouk          #+#    #+#             */
-/*   Updated: 2024/04/24 16:41:33 by amarzouk         ###   ########.fr       */
+/*   Updated: 2024/04/24 23:25:07 by ayman_marzo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 FragTrap::FragTrap()
 {
+    this->healthPoints = 100;
+    this->energyPoints = 100;
+    this->attackDamage = 30;
     std::cout << "FragTrap constractor is called" << std::endl;
 }
 

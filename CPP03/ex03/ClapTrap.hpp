@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 16:38:23 by amarzouk          #+#    #+#             */
-/*   Updated: 2024/04/24 15:35:23 by amarzouk         ###   ########.fr       */
+/*   Updated: 2024/04/24 23:46:51 by ayman_marzo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class ClapTrap
     ClapTrap& operator=(const ClapTrap &copy);
     ~ClapTrap();
     
-    ClapTrap(const std::string &name, unsigned int healthPoints = 10, unsigned int energyPoints = 10, unsigned int attackDamage = 0);
+    ClapTrap(const std::string &name, unsigned int healthPoints = 100, unsigned int energyPoints = 50, unsigned int attackDamage = 30);
     
     void attack(const std::string& target);
     void takeDamage(unsigned int amount);
