@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 16:19:55 by amarzouk          #+#    #+#             */
-/*   Updated: 2024/04/24 16:41:33 by amarzouk         ###   ########.fr       */
+/*   Updated: 2024/04/25 15:49:41 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ FragTrap::FragTrap()
     std::cout << "FragTrap constractor is called" << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap&copy)
+FragTrap::FragTrap(const FragTrap&copy) : ClapTrap(copy)
 {
     *this = copy;
     std::cout << "FragTrap copy constractor is called" << std::endl;
