@@ -10,3 +10,5 @@ Ex01:
 - Add more than 8 contacts, should replace the first one.
 - failure to add 9th contact -> result in empty 
 
+extra to handle: protect the phone number field to accept only intgers.
+
