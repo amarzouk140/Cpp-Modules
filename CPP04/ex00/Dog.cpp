@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 13:32:24 by ayman_marzo       #+#    #+#             */
-/*   Updated: 2024/04/28 14:53:55 by ayman_marzo      ###   ########.fr       */
+/*   Updated: 2024/04/28 11:18:07 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Dog::Dog()
     std::cout << "Dog Constructor Called" << std::endl;
 }
 
-Dog::Dog(const Dog &copy) 
+Dog::Dog(const Dog &copy) : Animal(copy)
 {
     *this = copy;
 }

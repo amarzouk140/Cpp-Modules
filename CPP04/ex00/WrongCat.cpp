@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 13:59:14 by ayman_marzo       #+#    #+#             */
-/*   Updated: 2024/04/28 15:11:47 by ayman_marzo      ###   ########.fr       */
+/*   Updated: 2024/04/28 11:18:23 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ WrongCat::WrongCat()
     std::cout << "WrongCat Constructor Called" << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat &copy) 
+WrongCat::WrongCat(const WrongCat &copy) : WrongAnimal(copy)
 {
     *this = copy;
 }
