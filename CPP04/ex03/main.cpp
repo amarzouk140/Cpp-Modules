@@ -6,9 +6,15 @@
 /*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 08:58:20 by amarzouk          #+#    #+#             */
-/*   Updated: 2024/04/29 08:59:05 by amarzouk         ###   ########.fr       */
+/*   Updated: 2024/04/29 13:26:50 by amarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "AMateria.hpp"
+#include "Cure.hpp"
+#include "Ice.hpp"
+#include "Character.hpp"
+#include "MateriaSource.hpp"
 
 int main() 
 {

@@ -1,32 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*   Queue.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/29 13:24:52 by amarzouk          #+#    #+#             */
-/*   Updated: 2024/04/29 13:25:33 by amarzouk         ###   ########.fr       */
+/*   Created: 2024/04/29 13:29:45 by amarzouk          #+#    #+#             */
+/*   Updated: 2024/04/29 13:29:47 by amarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef ICHARACTER_HPP
-# define ICHARACTER_HPP
+#ifndef QUEUE_HPP
+#define QUEUE_HPP
 
 #include <iostream>
-#include <string>
 
-class AMateria;
-
-class ICharacter
+class Node
 {
 public:
-	virtual ~ICharacter() {};
-	virtual const std::string	&getName() const = 0;
-	virtual void	equip(AMateria *m) = 0;
-	virtual void	unequip(int idx) = 0;
-	virtual void	use(int idx, ICharacter &target) = 0;
+	void	*val;
+	Node	*next;
+	Node();
+	Node(void *val);
+	~Node();
+};
+
+
+class Queue
+{
+private:
+	Node	*front;
+	Node	*rear;
+public:
+	Queue();
+	~Queue();
+	void	enqueue(void *val);
+	void	*dequeue(void);
+	void	*queueFront();
+	int		isEmpty();
 
 };
 

@@ -6,10 +6,11 @@
 /*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 09:11:56 by amarzouk          #+#    #+#             */
-/*   Updated: 2024/04/29 12:17:14 by amarzouk         ###   ########.fr       */
+/*   Updated: 2024/04/29 13:23:38 by amarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #ifndef AMATERIA_HPP
 #define AMATERIA_HPP
 
@@ -34,8 +35,5 @@ public:
 	virtual AMateria	*clone() const = 0;
 	virtual void		use(ICharacter &target);
 };
-
-
-
 
 #endif
