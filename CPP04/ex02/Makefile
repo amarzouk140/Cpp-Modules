@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+         #
+#    By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/28 22:03:04 by ayman_marzo       #+#    #+#              #
-#    Updated: 2024/04/28 22:11:50 by ayman_marzo      ###   ########.fr        #
+#    Updated: 2024/04/29 11:38:51 by amarzouk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
