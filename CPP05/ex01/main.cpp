@@ -6,7 +6,7 @@
 /*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 10:40:45 by amarzouk          #+#    #+#             */
-/*   Updated: 2024/05/06 14:42:39 by amarzouk         ###   ########.fr       */
+/*   Updated: 2024/05/06 14:57:18 by amarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,26 @@
 
 int main()
 {
-    try
-    {
-        Bureaucrat b("b", 1);
-        std::cout << b;
-        b.increment();
-        std::cout << b;
-    }
-    catch (std::exception & e)
-    {
-        std::cout << e.what() << std::endl;
-    }
+	try
+	{
+		Bureaucrat	bureaucrat("batman", 44);
+		std::cout << bureaucrat;
+		bureaucrat.increment();
+		std::cout << bureaucrat;
 
-    try 
-    {
-        Bureaucrat c("c", 149);
-        std::cout << c;
-        c.decrement();
-        std::cout << c;
-        c.decrement();
-        std::cout << c;
-    }
-    catch (std::exception & e)
-    {
-        std::cout << e.what() << std::endl;
-    }
+		Form Form("form", 42, 42);
+		std::cout << Form;
+
+		bureaucrat.signForm(Form);
+		
+		bureaucrat.increment();
+		std::cout << bureaucrat;
+
+		bureaucrat.signForm(Form);
+		std::cout << Form;
+	}
+	catch(std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 }
