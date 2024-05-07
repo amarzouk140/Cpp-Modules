@@ -6,7 +6,7 @@
 /*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 10:40:30 by amarzouk          #+#    #+#             */
-/*   Updated: 2024/05/06 14:47:04 by amarzouk         ###   ########.fr       */
+/*   Updated: 2024/05/07 14:39:17 by amarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 #include <exception>
 #include "Form.hpp"
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -37,7 +37,8 @@ class Bureaucrat
         int getGrade() const;
         void increment();
         void decrement();
-        void signForm(Form& form);
+        void signForm(AForm& form);
+        void executeForm(AForm const & form);
         
         class GradeTooHighException : public std::exception
         {
