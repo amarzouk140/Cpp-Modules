@@ -6,7 +6,7 @@
 /*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 14:18:26 by amarzouk          #+#    #+#             */
-/*   Updated: 2024/05/07 14:32:58 by amarzouk         ###   ########.fr       */
+/*   Updated: 2024/05/08 10:28:44 by amarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,15 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(RobotomyRequestForm const& f
 
 RobotomyRequestForm::~RobotomyRequestForm() {}
 
-void RobotomyRequestForm::execute(Bureaucrat const& executor) const {
-    AForm::execute(executor);
-    std::cout << "*drilling noises* ";
+void RobotomyRequestForm::execute(Bureaucrat const& executor) const
+{
+    if (!getSigned())
+        throw FormNotSignedException();
+    if (executor.getGrade() > getGradeToExec())
+        throw GradeTooLowException();
+    std::cout << "Drilling noises" << std::endl;
     if (rand() % 2)
-        std::cout << target << " has been robotomized successfully" << std::endl;
+        std::cout << target << " has been robotomized" << std::endl;
     else
-        std::cout << target << " failed to be robotomized" << std::endl;
+        std::cout << target << " robotomization failed" << std::endl;
 }

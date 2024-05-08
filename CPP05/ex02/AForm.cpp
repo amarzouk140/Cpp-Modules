@@ -77,8 +77,22 @@ std::ostream& operator<<(std::ostream& out, AForm const& AForm)
     else
     {
         out << "not signed ";
-        out << " and requires grade " << AForm.getGradeToSign() << " to sign and grade " << AForm.getGradeToExec() << " to execute ";
+        out << " and requires grade " << AForm.getGradeToSign() << " to sign and grade " << AForm.getGradeToExec() << " to execute " << std::endl;
     }
     return out;
 }
 
+const char* AForm::FormNotSignedException::what() const throw()
+{
+    return "Form is not signed";
+}
+
+const char* AForm::FormAlreadySignedException::what() const throw()
+{
+    return "Form is already signed";
+}
+
+const char* AForm::FormFailedException::what() const throw()
+{
+    return "Form failed";
+}

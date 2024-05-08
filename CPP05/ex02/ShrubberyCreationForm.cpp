@@ -6,7 +6,7 @@
 /*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 14:18:32 by amarzouk          #+#    #+#             */
-/*   Updated: 2024/05/07 14:28:46 by amarzouk         ###   ########.fr       */
+/*   Updated: 2024/05/08 10:30:37 by amarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,16 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
-void ShrubberyCreationForm::execute(Bureaucrat const& executor) const {
-    AForm::execute(executor);
+void ShrubberyCreationForm::execute(Bureaucrat const& executor) const
+{
+    if (!getSigned())
+        throw FormNotSignedException();
+    if (executor.getGrade() > getGradeToExec())
+        throw GradeTooLowException();
+
     std::ofstream file(target + "_shrubbery");
+    if (!file.is_open())
+        throw (FormFailedException());
     file << "      /\\      " << std::endl;
     file << "     /\\*\\     " << std::endl;
     file << "    /\\O\\*\\    " << std::endl;
@@ -44,21 +51,8 @@ void ShrubberyCreationForm::execute(Bureaucrat const& executor) const {
     file << "      ||      " << std::endl;
     file << "      ||      " << std::endl;
     file << "      ||      " << std::endl;
-    file << std::endl;
     file << "      ||      " << std::endl;
     file << "      ||      " << std::endl;
     file << "      ||      " << std::endl;
     file << std::endl;
-    file << "      ||      " << std::endl;
-    file << "      ||      " << std::endl;
-    file << "      ||      " << std::endl;
-    file << std::endl;
-    file << "      ||      " << std::endl;
-    file << "      ||      " << std::endl;
-    file << "      ||      " << std::endl;
-    file << std::endl;
-    file << "      ||      " << std::endl;
-    file << "      ||      " << std::endl;
-    file << "      ||      " << std::endl;
-    file.close();
 }

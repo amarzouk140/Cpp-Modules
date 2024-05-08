@@ -6,7 +6,7 @@
 /*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 10:40:30 by amarzouk          #+#    #+#             */
-/*   Updated: 2024/05/07 14:39:17 by amarzouk         ###   ########.fr       */
+/*   Updated: 2024/05/08 10:23:34 by amarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <string>
 #include <stdexcept>
 #include <exception>
-#include "Form.hpp"
+#include "AForm.hpp"
 
 class AForm;
 

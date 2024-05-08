@@ -6,7 +6,7 @@
 /*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 13:46:09 by amarzouk          #+#    #+#             */
-/*   Updated: 2024/05/07 14:26:40 by amarzouk         ###   ########.fr       */
+/*   Updated: 2024/05/08 10:27:38 by amarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,22 @@ class AForm
             public:
                 virtual const char* what() const throw();
         };
-
+        class FormNotSignedException : public std::exception 
+        {
+            public:
+                virtual const char* what() const throw();
+        };
+        class FormAlreadySignedException : public std::exception 
+        {
+            public:
+                virtual const char* what() const throw();
+        };
+        class FormFailedException : public std::exception 
+        {
+            public:
+                virtual const char* what() const throw();
+        };
+        
 };
 
 std::ostream& operator<<(std::ostream& out, AForm const& form);
