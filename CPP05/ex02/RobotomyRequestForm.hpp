@@ -6,7 +6,7 @@
 /*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 14:18:29 by amarzouk          #+#    #+#             */
-/*   Updated: 2024/05/07 14:25:10 by amarzouk         ###   ########.fr       */
+/*   Updated: 2024/05/08 10:40:23 by amarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #define ROBOTOMYREQUESTFORM_HPP
 
 #include "AForm.hpp"
+#include <cstdlib>
 
 class RobotomyRequestForm : public AForm
 {

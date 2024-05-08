@@ -6,7 +6,7 @@
 /*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 14:18:32 by amarzouk          #+#    #+#             */
-/*   Updated: 2024/05/08 10:30:37 by amarzouk         ###   ########.fr       */
+/*   Updated: 2024/05/08 10:39:28 by amarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const& executor) const
     if (executor.getGrade() > getGradeToExec())
         throw GradeTooLowException();
 
-    std::ofstream file(target + "_shrubbery");
+    std::ofstream file((target + "_shrubbery").c_str());
     if (!file.is_open())
         throw (FormFailedException());
     file << "      /\\      " << std::endl;
