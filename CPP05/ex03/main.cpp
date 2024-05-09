@@ -6,7 +6,7 @@
 /*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 10:40:45 by amarzouk          #+#    #+#             */
-/*   Updated: 2024/05/08 10:36:17 by amarzouk         ###   ########.fr       */
+/*   Updated: 2024/05/09 08:27:11 by amarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,39 +15,23 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
-int main()
+int main (void)
 {
-		try
+	try
 	{
-		Bureaucrat	bureaucrat("batman", 42);
-		std::cout << bureaucrat;
-		
-		// #=========== ShrubberyCreationForm =======#
-		ShrubberyCreationForm	shrubbery("Home");
-		std::cout << shrubbery;
+		Intern someRandomIntern;
 
-		bureaucrat.signForm(shrubbery);
-		bureaucrat.executeForm(shrubbery);
+		AForm	*rrf;
 
-		// #=========== RobotomyRequestForm =======#
-		RobotomyRequestForm	robotomy("Robot");
-		std::cout << robotomy;
-
-		bureaucrat.signForm(robotomy);
-		bureaucrat.executeForm(robotomy);
-
-
-		// #=========== PresidentialPardonForm =======#
-		PresidentialPardonForm	presidential("President");
-		std::cout << presidential;
-
-		bureaucrat.signForm(presidential);
-		bureaucrat.executeForm(presidential);
-		
+		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+		std::cout << *rrf << std::endl;
+		delete rrf;
 	}
 	catch(std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
-	}	
+	}
+	return (0);
 }
