@@ -6,7 +6,7 @@
 /*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:11:40 by amarzouk          #+#    #+#             */
-/*   Updated: 2024/05/20 13:49:37 by amarzouk         ###   ########.fr       */
+/*   Updated: 2024/05/20 14:16:20 by amarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 #include <exception>
 #include <cmath>
 #include <limits>
+#include <iomanip>
+
 
 class ScalarConverter
 {
@@ -34,7 +36,7 @@ class ScalarConverter
         static void    toFloat(std::string input);
         static void    toDouble(std::string input);
         
-        static void    convert(std::string input);
+        static void    convert( std::string input);
 };
 
 #endif

@@ -6,7 +6,7 @@
 #    By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/20 12:19:29 by amarzouk          #+#    #+#              #
-#    Updated: 2024/05/20 12:21:22 by amarzouk         ###   ########.fr        #
+#    Updated: 2024/05/20 14:16:50 by amarzouk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,6 @@ clean:
 	
 fclean: clean
 	rm -f $(NAME)
-	rm -f Home_shrubbery
 
 re: fclean all
 
