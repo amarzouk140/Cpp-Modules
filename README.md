@@ -28,6 +28,7 @@ The CPP Modules project is designed to provide a comprehensive understanding of 
 7. **CPP Module 06:** C++ casts.
 8. **CPP Module 07:** Templates.
 9. **CPP Module 08:** Templated containers, iterators, and algorithms.
+10. **CPP Module 09:** STL
 
 ## Requirements
 
