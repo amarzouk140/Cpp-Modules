@@ -32,7 +32,7 @@ The CPP Modules project is designed to provide a comprehensive understanding of 
 ## Requirements
 
 - GNU Make
-- GCC or Clang with C++17 support
+- CC
 
 ## Installation
 
