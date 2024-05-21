@@ -39,14 +39,14 @@ The CPP Modules project is designed to provide a comprehensive understanding of 
 1. Clone the repository:
 
     ```sh
-    git clone https://github.com/amarzouk140/cpp_modules.git
-    cd cpp_modules
+    git clone https://github.com/amarzouk140/Cpp-Modules.git
+    cd CPP00
     ```
 
 2. Navigate to the module you want to work on:
 
     ```sh
-    cd module_00
+    cd CPP00
     ```
 
 3. Compile the project:
@@ -62,16 +62,12 @@ The CPP Modules project is designed to provide a comprehensive understanding of 
 2. Run the compiled executable:
 
     ```sh
-    ./module_00
+    ./<execute file name>
     ```
 
-    Replace `module_00` with the appropriate module name.
 
-### Example
+## Contributing
 
-To compile and run Module 00:
 
-```sh
-cd module_00
-make
-./module_00
+Contributions are welcome! If you find any issues or have suggestions for improvement, feel free to open an issue or create a pull request.
+
