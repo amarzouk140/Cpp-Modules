@@ -6,7 +6,7 @@
 /*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 09:50:07 by amarzouk          #+#    #+#             */
-/*   Updated: 2024/05/21 10:01:13 by amarzouk         ###   ########.fr       */
+/*   Updated: 2024/05/21 10:15:04 by amarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,24 +50,24 @@ void identify(Base& p)
 {
     try 
     {
-        (void)dynamic_cast<A&>(p);
+        A& a = dynamic_cast<A&>(p);
         std::cout << "Reference refers to an instance of class A" << std::endl;
+        (void)a;
         return;
-    } 
-    catch (...) {}
+    } catch (...) {}
     try 
     {
-        (void)dynamic_cast<B&>(p);
+        B& b = dynamic_cast<B&>(p);
         std::cout << "Reference refers to an instance of class B" << std::endl;
+        (void)b;
         return;
-    } 
-    catch (...) {}
+    } catch (...) {}
     try 
     {
-        (void)dynamic_cast<C&>(p);
+        C& c = dynamic_cast<C&>(p);
         std::cout << "Reference refers to an instance of class C" << std::endl;
+        (void)c;
         return;
-    } 
-    catch (...) {}
+    } catch (...) {}
     std::cout << "Reference refers to an unknown type" << std::endl;
 }
