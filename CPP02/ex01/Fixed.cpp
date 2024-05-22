@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
+/*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:58:34 by ayman_marzo       #+#    #+#             */
-/*   Updated: 2024/04/21 22:05:55 by ayman_marzo      ###   ########.fr       */
+/*   Updated: 2024/05/22 13:35:25 by amarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ Fixed::Fixed(const int intger)
 Fixed::Fixed(const float FloatingPoint)
 {
 	std::cout << "Float constructor called" << std::endl;
-	FixedPoint = roundf(FloatingPoint * (1 << FractionalBits));
+	FixedPoint = (FloatingPoint * (1 << FractionalBits));
 }
 
 float	Fixed::toFloat(void) const
@@ -58,7 +58,7 @@ float	Fixed::toFloat(void) const
 
 int		Fixed::toInt(void) const
 {
-	return (static_cast<int>(FixedPoint * 1.0 / (1 << FractionalBits)));
+	return (roundf(FixedPoint * 1.0 / (1 << FractionalBits)));
 }
 
 std::ostream &operator<<(std::ostream &os, const Fixed &fixed)
