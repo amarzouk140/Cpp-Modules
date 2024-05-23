@@ -6,7 +6,7 @@
 /*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 11:26:58 by amarzouk          #+#    #+#             */
-/*   Updated: 2024/05/22 12:05:26 by amarzouk         ###   ########.fr       */
+/*   Updated: 2024/05/23 09:04:52 by amarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,20 @@ int main() {
         std::string strArray[] = {"hello", "world", "!"};
 
         std::cout << "Original intArray: ";
-        iter(intArray, 5, print);
+        iter(intArray, 5, ftPrint);
         std::cout << std::endl;
 
         iter(intArray, 5, increment);
         std::cout << "Incremented intArray: ";
-        iter(intArray, 5, print);
+        iter(intArray, 5, ftPrint);
         std::cout << std::endl;
 
         std::cout << "Original strArray: ";
-        iter(strArray, 3, print);
+        iter(strArray, 3, ftPrint);
         std::cout << std::endl;
 
         std::cout << "limited strArray: ";
-        iter(strArray, 1, print);
+        iter(strArray, 1, ftPrint);
         std::cout << std::endl;
 
     } 

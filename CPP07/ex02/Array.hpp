@@ -6,7 +6,7 @@
 /*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 12:12:58 by amarzouk          #+#    #+#             */
-/*   Updated: 2024/05/22 14:33:55 by amarzouk         ###   ########.fr       */
+/*   Updated: 2024/05/23 09:02:39 by amarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ class Array
         }
     Array(const Array& other) : _size(other._size) 
         {
+        std::cout << "Copy constructor called" << std::endl;
         if (_size == 0)
             _array = NULL;
         else 
