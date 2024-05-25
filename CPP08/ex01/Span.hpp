@@ -6,7 +6,7 @@
 /*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 21:46:24 by ayman_marzo       #+#    #+#             */
-/*   Updated: 2024/05/25 22:38:49 by ayman_marzo      ###   ########.fr       */
+/*   Updated: 2024/05/25 22:54:40 by ayman_marzo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 #include <deque>
 #include <exception>
 #include <stdexcept>
+#include <limits>
 
 class Span 
 {
