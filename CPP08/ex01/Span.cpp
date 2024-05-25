@@ -6,7 +6,7 @@
 /*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 21:50:14 by ayman_marzo       #+#    #+#             */
-/*   Updated: 2024/05/25 22:25:48 by ayman_marzo      ###   ########.fr       */
+/*   Updated: 2024/05/25 23:03:41 by ayman_marzo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,13 @@ int Span::longestSpan() const
     int max = *std::max_element(_numbers.begin(), _numbers.end());
 
     return max - min;
+}
+
+void Span::fillRandomNumbers(unsigned int count, int maxValue) 
+{
+    if (count + _numbers.size() > _maxSize) 
+        throw std::length_error("Adding random numbers would exceed Span capacity");
+    srand(time(0)); // Seed for random number generation
+    for (unsigned int i = 0; i < count; ++i) 
+        _numbers.push_back(rand() % (maxValue + 1)); // Adding random numbers
 }

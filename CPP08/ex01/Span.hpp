@@ -6,7 +6,7 @@
 /*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 21:46:24 by ayman_marzo       #+#    #+#             */
-/*   Updated: 2024/05/25 22:54:40 by ayman_marzo      ###   ########.fr       */
+/*   Updated: 2024/05/25 23:02:50 by ayman_marzo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ public:
     int shortestSpan() const; /* calculate the smallest and largest differences (or spans) between the elements stored in the Span */
     int longestSpan() const; /* calculate the largest differences (or spans) between the elements stored in the Span */
 
+    void fillRandomNumbers(unsigned int count, int maxValue);
 };
 
 #include "Span.tpp"
