@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
+/*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 21:46:24 by ayman_marzo       #+#    #+#             */
-/*   Updated: 2024/05/25 23:02:50 by ayman_marzo      ###   ########.fr       */
+/*   Updated: 2024/05/26 13:44:09 by amarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 #include <deque>
 #include <exception>
 #include <stdexcept>
-#include <limits>
+#include <climits>
 
 class Span 
 {
