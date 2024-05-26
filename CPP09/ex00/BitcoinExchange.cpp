@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 20:38:21 by ayman_marzo       #+#    #+#             */
-/*   Updated: 2024/05/26 22:37:31 by ayman_marzo      ###   ########.fr       */
+/*   Updated: 2024/05/26 18:53:38 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,12 @@ BitcoinExchange::BitcoinExchange(const std::string& dbFilename) {
 }
 
 
+
 void BitcoinExchange::loadDatabase(const std::string& filename) {
-    std::ifstream file(filename);
+    std::ifstream file(filename.c_str()); // Convert std::string to const char*
     if (!file.is_open()) {
         std::cerr << "Error: could not open database file." << std::endl;
-        exit(1);
-        return;
+        exit(1); // Include <cstdlib> to use exit
     }
 
     std::string line;
@@ -64,7 +64,7 @@ void BitcoinExchange::loadDatabase(const std::string& filename) {
 
         // Convert value to float
         try {
-            value = std::stof(valueStr);
+            value = customStof(valueStr);
         } catch (const std::exception& e) {
             std::cerr << "Error: bad input in database => " << line << std::endl;
             continue;
@@ -75,8 +75,9 @@ void BitcoinExchange::loadDatabase(const std::string& filename) {
     file.close();
 }
 
+
 void BitcoinExchange::processInput(const std::string& inputFilename) const {
-    std::ifstream file(inputFilename);
+    std::ifstream file(inputFilename.c_str()); // Convert std::string to const char*
     if (!file.is_open()) {
         std::cerr << "Error: could not open input file." << std::endl;
         return;
@@ -110,7 +111,7 @@ void BitcoinExchange::processInput(const std::string& inputFilename) const {
 
         // Convert value to float
         try {
-            value = std::stof(valueStr);
+            value = customStof(valueStr);
         } catch (const std::exception& e) {
             std::cerr << "Error: bad input => " << line << std::endl;
             continue;
@@ -144,4 +145,14 @@ void BitcoinExchange::processInput(const std::string& inputFilename) const {
         }
     }
     file.close();
+}
+
+float BitcoinExchange::customStof(const std::string& str) const {
+    std::istringstream iss(str);
+    float result;
+    iss >> result;
+    if (iss.fail()) {
+        throw std::invalid_argument("Invalid float value");
+    }
+    return result;
 }

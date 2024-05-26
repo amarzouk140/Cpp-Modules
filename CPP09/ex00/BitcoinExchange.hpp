@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 20:30:07 by ayman_marzo       #+#    #+#             */
-/*   Updated: 2024/05/26 21:51:21 by ayman_marzo      ###   ########.fr       */
+/*   Updated: 2024/05/26 18:54:22 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include <cstdlib>
 
 class BitcoinExchange 
 
@@ -27,6 +28,7 @@ class BitcoinExchange
     
         std::map<std::string, float> btcData;
         void loadDatabase(const std::string& filename);
+        float customStof(const std::string& str) const;
     
     public:
     
@@ -37,7 +39,6 @@ class BitcoinExchange
 
         BitcoinExchange(const std::string& dbFilename);
 
-        
         void processInput(const std::string& inputFilename) const;
 
 };
