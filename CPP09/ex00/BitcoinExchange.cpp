@@ -6,7 +6,7 @@
 /*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 20:38:21 by ayman_marzo       #+#    #+#             */
-/*   Updated: 2024/05/26 23:15:30 by ayman_marzo      ###   ########.fr       */
+/*   Updated: 2024/05/26 23:30:26 by ayman_marzo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,56 +25,57 @@ BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& other)
         this->btcData = other.btcData;
     return *this;
 }
-
 BitcoinExchange::~BitcoinExchange() {}
 
+BitcoinExchange::BitcoinExchange(const std::string& dbFilename) {loadDatabase(dbFilename);}
 
-BitcoinExchange::BitcoinExchange(const std::string& dbFilename) {
-    loadDatabase(dbFilename);
-}
-
-
-
-void BitcoinExchange::loadDatabase(const std::string& filename) {
-    std::ifstream file(filename.c_str()); // Convert std::string to const char*
-    if (!file.is_open()) {
+void BitcoinExchange::loadDatabase(const std::string& filename) 
+{
+    std::ifstream file(filename.c_str());
+    if (!file.is_open()) 
+    {
         std::cerr << "Error: could not open database file." << std::endl;
-        exit(1); // Include <cstdlib> to use exit
+        exit(1);
     }
 
     std::string line;
-    // Skip the header row
-    std::getline(file, line);
+    std::getline(file, line); // Skip the header row
 
-    while (std::getline(file, line)) {
+    while (std::getline(file, line)) 
+    {
         std::stringstream ss(line);
         std::string date;
         std::string valueStr;
         float value;
 
-        if (!std::getline(ss, date, ',')) {
+        if (!std::getline(ss, date, ',')) 
+        {
             std::cerr << "Error: bad input in database => " << line << std::endl;
             continue;
         }
 
-        if (!std::getline(ss, valueStr)) {
+        if (!std::getline(ss, valueStr)) 
+        {
             std::cerr << "Error: bad input in database => " << line << std::endl;
             continue;
         }
 
         // Convert value to float
-        try {
+        try 
+        {
             value = customStof(valueStr);
-        } catch (const std::exception& e) {
+        } 
+        catch (const std::exception& e) 
+        {
             std::cerr << "Error: bad input in database => " << line << std::endl;
             continue;
         }
-
+        
         btcData[date] = value;
     }
+    
     file.close();
 }
-
 
 void BitcoinExchange::processInput(const std::string& inputFilename) const 
 {
