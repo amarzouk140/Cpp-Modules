@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 20:30:07 by ayman_marzo       #+#    #+#             */
-/*   Updated: 2024/05/26 18:54:22 by codespace        ###   ########.fr       */
+/*   Updated: 2024/05/26 23:36:03 by ayman_marzo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
