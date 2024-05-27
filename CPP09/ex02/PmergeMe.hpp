@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 11:00:53 by ayman_marzo       #+#    #+#             */
-/*   Updated: 2024/05/27 14:29:01 by amarzouk         ###   ########.fr       */
+/*   Updated: 2024/05/28 00:18:08 by ayman_marzo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,11 @@ void PmergeMe::mergeInsertSort(Container& container)
     if (container.size() <= 1) 
         return;
 
-    typename Container::iterator mid = container.begin();
-    std::advance(mid, container.size() / 2);
+    typename Container::iterator mid = container.begin(); // create iterator to the beginning of the container
+    std::advance(mid, container.size() / 2); // using advance to move the iterator to the middle of the container
 
-    Container left(container.begin(), mid);
-    Container right(mid, container.end());
+    Container left(container.begin(), mid); // create a new container from the beginning to the middle
+    Container right(mid, container.end()); // create a new container from the middle to the end
 
     mergeInsertSort(left);
     mergeInsertSort(right);
@@ -70,8 +70,8 @@ void PmergeMe::mergeInsertSort(Container& container)
             container.push_back(*it_right++);
     }
 
-    container.insert(container.end(), it_left, left.end());
-    container.insert(container.end(), it_right, right.end());
+    container.insert(container.end(), it_left, left.end()); // insert the remaining elements from the left container if any
+    container.insert(container.end(), it_right, right.end()); // insert the remaining elements from the right container if any
 }
 
 template <typename Container>
@@ -81,7 +81,7 @@ void PmergeMe::measureSortTime(const Container& input, const std::string& contai
     std::clock_t start = std::clock();
     mergeInsertSort(copy);
     std::clock_t end = std::clock();
-    double duration = 1000000.0 * (end - start) / CLOCKS_PER_SEC;
+    double duration = 1000000.0 * (end - start) / CLOCKS_PER_SEC; // calculate the duration in microseconds
 
     std::cout << "Time to process a range of " << input.size() << " elements with " << containerName << ": " << duration << " microseconds" << std::endl;
 }

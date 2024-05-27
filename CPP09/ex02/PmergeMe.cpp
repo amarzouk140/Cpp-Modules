@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 11:01:23 by ayman_marzo       #+#    #+#             */
-/*   Updated: 2024/05/27 14:24:49 by amarzouk         ###   ########.fr       */
+/*   Updated: 2024/05/28 00:22:45 by ayman_marzo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,25 +32,24 @@ PmergeMe& PmergeMe::operator=(const PmergeMe& other)
 
 void PmergeMe::sortAndMeasure(const std::vector<int>& input) 
 {
-    std::cout << "Before: ";
+    std::cout << "Before: "; // print the vector before sorting
     for (std::vector<int>::const_iterator it = input.begin(); it != input.end(); ++it) 
         std::cout << *it << " ";
     
     std::cout << std::endl;
 
-    measureSortTime(input, "std::vector");
+    measureSortTime(input, "std::vector"); // measure the time it takes to sort the vector
 
-    std::list<int> inputList(input.begin(), input.end());
-    
-    measureSortTime(inputList, "std::list");
+    std::list<int> inputList(input.begin(), input.end()); // create a list from the vector
+    measureSortTime(inputList, "std::list"); // measure the time it takes to sort the list
 
     std::cout << "After: ";
     std::vector<int> sortedInput = input;
     
-    mergeInsertSort(sortedInput);
+    mergeInsertSort(sortedInput); // sort the vector 
     
-    for (std::vector<int>::const_iterator it = sortedInput.begin(); it != sortedInput.end(); ++it)
-        std::cout << *it << " ";
+    for (std::vector<int>::const_iterator it = sortedInput.begin(); it != sortedInput.end(); ++it) 
+        std::cout << *it << " "; // print the sorted vector
  
     std::cout << std::endl;
 }
