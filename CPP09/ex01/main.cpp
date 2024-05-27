@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 09:23:01 by ayman_marzo       #+#    #+#             */
-/*   Updated: 2024/05/27 09:26:36 by ayman_marzo      ###   ########.fr       */
+/*   Updated: 2024/05/27 06:08:42 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main(int ac, char** av) 
 {
     if (ac != 2)
-        return (std::cerr << "Usage: ./RPN \"expression\"" << std::endl, 1);
+        return (std::cout << "Usage: ./RPN \"expression\"" << std::endl, 1);
 
     RPN rpn;
     try 
@@ -25,7 +25,7 @@ int main(int ac, char** av)
     } 
     catch (const std::exception& e) 
     {
-        std::cerr << "Error" << std::endl;
+        std::cerr << "Error " << e.what() << std::endl;
     }
 
     return 0;
