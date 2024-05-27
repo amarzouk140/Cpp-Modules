@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 09:22:37 by ayman_marzo       #+#    #+#             */
-/*   Updated: 2024/05/27 06:33:04 by codespace        ###   ########.fr       */
+/*   Updated: 2024/05/27 06:37:57 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int RPN::stringToInt(const std::string& str) const
     std::stringstream ss(str);
     int result;
     ss >> result;
-    if (ss.fail() || result < 0 || result > 9)
+    if (ss.fail() || !ss.eof() || result < 0 || result > 9)
         throw std::invalid_argument("Invalid integer value");
     return result;
 }
