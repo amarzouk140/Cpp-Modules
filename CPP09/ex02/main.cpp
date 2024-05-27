@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
+/*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 11:01:42 by ayman_marzo       #+#    #+#             */
-/*   Updated: 2024/05/27 11:07:43 by ayman_marzo      ###   ########.fr       */
+/*   Updated: 2024/05/27 12:40:33 by amarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,17 @@ int main(int ac, char* av[])
     {
         for (int i = 1; i < ac; ++i) 
         {
-            int num = std::stoi(av[i]);
-            if (num <= 0)
-                throw std::invalid_argument("Negative number or zero");
-    
+            std::istringstream iss(av[i]);
+            int num;
+            if (!(iss >> num) || num <= 0)
+                throw std::invalid_argument("Invalid number: " + std::string(av[i]));
+
             input.push_back(num);
         }
     } 
     catch (const std::exception& e) 
     {
-        std::cerr << "Error: " << e.what() << std::endl;
+        std::cout << "Error: " << e.what() << std::endl;
         return 1;
     }
 

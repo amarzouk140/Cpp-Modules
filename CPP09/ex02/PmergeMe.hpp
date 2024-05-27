@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
+/*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 11:00:53 by ayman_marzo       #+#    #+#             */
-/*   Updated: 2024/05/27 11:05:48 by ayman_marzo      ###   ########.fr       */
+/*   Updated: 2024/05/27 12:51:30 by amarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,25 @@
 #include <algorithm>
 #include <ctime>
 
-class PmergeMe {
-public:
-    PmergeMe();
-    ~PmergeMe();
-    PmergeMe(const PmergeMe& other);
-    PmergeMe& operator=(const PmergeMe& other);
+class PmergeMe 
+{
+    private:
 
-    void sortAndMeasure(const std::vector<int>& input);
+        template <typename Container>
+        void mergeInsertSort(Container& container);
 
-private:
-    template <typename Container>
-    void mergeInsertSort(Container& container);
+        template <typename Container>
+        void measureSortTime(const Container& input, const std::string& containerName);
 
-    template <typename Container>
-    void measureSortTime(const Container& input, const std::string& containerName);
+    public:
+
+        PmergeMe();
+        ~PmergeMe();
+        PmergeMe(const PmergeMe& other);
+        PmergeMe& operator=(const PmergeMe& other);
+
+        void sortAndMeasure(const std::vector<int>& input);
+
 };
 
 template <typename Container>
@@ -77,7 +81,7 @@ void PmergeMe::measureSortTime(const Container& input, const std::string& contai
     std::clock_t end = std::clock();
     double duration = 1000000.0 * (end - start) / CLOCKS_PER_SEC;
 
-    std::cout << "Time to process a range of " << input.size() << " elements with " << containerName << ": " << duration << " us" << std::endl;
+    std::cout << "Time to process a range of " << input.size() << " elements with " << containerName << ": " << duration << " microseconds" << std::endl;
 }
 
 #endif
