@@ -6,7 +6,7 @@
 /*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 20:38:21 by ayman_marzo       #+#    #+#             */
-/*   Updated: 2024/05/26 23:30:26 by ayman_marzo      ###   ########.fr       */
+/*   Updated: 2024/05/27 23:08:51 by ayman_marzo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,7 +145,7 @@ void BitcoinExchange::processInput(const std::string& inputFilename) const
         }
 
         // Process the input
-        std::map<std::string, float>::const_iterator it = btcData.lower_bound(date);
+        std::map<std::string, float>::const_iterator it = btcData.lower_bound(date); // explainaion below
         if (it != btcData.end() && it->first == date) 
             std::cout << date << " => " << value << " = " << value * it->second << std::endl;
         
@@ -170,3 +170,28 @@ float BitcoinExchange::customStof(const std::string& str) const
         throw std::invalid_argument("Invalid float value");
     return result;
 }
+
+/*
+What is std::map::lower_bound?
+The lower_bound function in std::map returns an iterator to the first element that is not less than the given key. In other words, it finds the smallest element that is greater than or equal to the specified key.
+
+Call lower_bound("2021-07-01"):
+
+It will search for the first date that is not less than "2021-07-01".
+Find the Lower Bound:
+
+The dates in btcData are 2021-01-01, 2021-06-01, and 2021-12-01.
+The first date that is not less than "2021-07-01" is "2021-12-01".
+So, lower_bound("2021-07-01") will return an iterator to "2021-12-01".
+
+Key Points to Understand
+When lower_bound Finds a Match:
+If there is a date in the map that exactly matches "2021-07-01", lower_bound will return an iterator to that exact match.
+When lower_bound Does Not Find a Match:
+If there is no exact match, lower_bound returns an iterator to the first date that is greater than "2021-07-01".
+If all dates are less than "2021-07-01", lower_bound will return btcData.end().
+Why Use lower_bound?
+In the context of BitcoinExchange, you want to find the closest date in your database that is not later than the date you're looking for. This allows you to use historical data to estimate the Bitcoin value for dates that might not be explicitly recorded in your database.
+
+
+*/
