@@ -6,7 +6,7 @@
 /*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 11:00:53 by ayman_marzo       #+#    #+#             */
-/*   Updated: 2024/05/27 12:51:30 by amarzouk         ###   ########.fr       */
+/*   Updated: 2024/05/27 14:29:01 by amarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,10 @@ class PmergeMe
 };
 
 template <typename Container>
-void PmergeMe::mergeInsertSort(Container& container) {
-    if (container.size() <= 1) {
+void PmergeMe::mergeInsertSort(Container& container) 
+{
+    if (container.size() <= 1) 
         return;
-    }
 
     typename Container::iterator mid = container.begin();
     std::advance(mid, container.size() / 2);
@@ -61,12 +61,13 @@ void PmergeMe::mergeInsertSort(Container& container) {
     typename Container::iterator it_left = left.begin();
     typename Container::iterator it_right = right.begin();
 
-    while (it_left != left.end() && it_right != right.end()) {
-        if (*it_left < *it_right) {
+    while (it_left != left.end() && it_right != right.end()) 
+    {
+        if (*it_left < *it_right) 
             container.push_back(*it_left++);
-        } else {
+
+        else
             container.push_back(*it_right++);
-        }
     }
 
     container.insert(container.end(), it_left, left.end());
@@ -74,7 +75,8 @@ void PmergeMe::mergeInsertSort(Container& container) {
 }
 
 template <typename Container>
-void PmergeMe::measureSortTime(const Container& input, const std::string& containerName) {
+void PmergeMe::measureSortTime(const Container& input, const std::string& containerName) 
+{
     Container copy = input;
     std::clock_t start = std::clock();
     mergeInsertSort(copy);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
+/*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 11:01:23 by ayman_marzo       #+#    #+#             */
-/*   Updated: 2024/05/27 11:10:06 by ayman_marzo      ###   ########.fr       */
+/*   Updated: 2024/05/27 14:24:49 by amarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,14 @@ void PmergeMe::sortAndMeasure(const std::vector<int>& input)
     measureSortTime(input, "std::vector");
 
     std::list<int> inputList(input.begin(), input.end());
+    
     measureSortTime(inputList, "std::list");
 
     std::cout << "After: ";
     std::vector<int> sortedInput = input;
+    
     mergeInsertSort(sortedInput);
+    
     for (std::vector<int>::const_iterator it = sortedInput.begin(); it != sortedInput.end(); ++it)
         std::cout << *it << " ";
  
