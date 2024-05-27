@@ -6,7 +6,7 @@
 /*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 09:22:37 by ayman_marzo       #+#    #+#             */
-/*   Updated: 2024/05/27 09:30:15 by ayman_marzo      ###   ########.fr       */
+/*   Updated: 2024/05/27 09:55:46 by ayman_marzo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,16 @@ int RPN::performOperation(const std::string& operation, int operand1, int operan
     throw std::runtime_error("Invalid operator");
 }
 
+int RPN::stringToInt(const std::string& str) const 
+{
+    std::stringstream ss(str);
+    int result;
+    ss >> result;
+    if (ss.fail())
+        throw std::invalid_argument("Invalid integer value");
+    return result;
+}
+
 int RPN::evaluate(const std::string& expression) 
 {
     std::istringstream iss(expression);
@@ -55,9 +65,8 @@ int RPN::evaluate(const std::string& expression)
 
     while (iss >> token) 
     {
-        if (isdigit(token[0])) 
-            stack.push(std::stoi(token));
-        
+        if (isdigit(token[0]))
+            stack.push(stringToInt(token));
         else if (isOperator(token)) 
         {
             if (stack.size() < 2) 
@@ -67,7 +76,7 @@ int RPN::evaluate(const std::string& expression)
             int result = performOperation(token, operand1, operand2);
             stack.push(result);
         } 
-        else 
+        else
             throw std::runtime_error("Invalid token");
     }
 
