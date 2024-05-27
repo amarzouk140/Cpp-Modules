@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 09:22:37 by ayman_marzo       #+#    #+#             */
-/*   Updated: 2024/05/27 06:04:47 by codespace        ###   ########.fr       */
+/*   Updated: 2024/05/27 06:33:04 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int RPN::evaluate(const std::string& expression)
 
     while (iss >> token) 
     {
-        if (isdigit(token[0]))
+        if (isdigit(token[0]) && token.length() == 1)
             stack.push(stringToInt(token));
         else if (isOperator(token)) 
         {
@@ -77,7 +77,7 @@ int RPN::evaluate(const std::string& expression)
             stack.push(result);
         } 
         else
-            throw std::runtime_error("Invalid token");
+            throw std::runtime_error("Invalid input token");
     }
 
     if (stack.size() != 1) 
