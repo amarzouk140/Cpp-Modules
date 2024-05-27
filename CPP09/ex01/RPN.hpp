@@ -6,7 +6,7 @@
 /*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 09:16:23 by ayman_marzo       #+#    #+#             */
-/*   Updated: 2024/05/27 09:54:26 by ayman_marzo      ###   ########.fr       */
+/*   Updated: 2024/05/27 09:56:23 by ayman_marzo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 class RPN 
 {
 public:
+
     RPN();
     ~RPN();
     RPN(const RPN& other);
@@ -31,9 +32,10 @@ public:
     int evaluate(const std::string& expression);
 
 private:
+
     std::stack<int> stack;
 
-        int stringToInt(const std::string& str) const;
+    int stringToInt(const std::string& str) const;
     bool isOperator(const std::string& token) const;
     int performOperation(const std::string& operation, int operand1, int operand2) const;
 };
