@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
+/*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 20:38:21 by ayman_marzo       #+#    #+#             */
-/*   Updated: 2024/05/27 23:08:51 by ayman_marzo      ###   ########.fr       */
+/*   Updated: 2024/07/15 15:24:14 by amarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,14 +87,14 @@ void BitcoinExchange::processInput(const std::string& inputFilename) const
     }
 
     std::string line; 
-    std::getline(file, line); // to Skip the header row
+    std::getline(file, line); // Skip the header row
 
     while (std::getline(file, line)) 
     {
         std::stringstream ss(line);
         std::string date;
         std::string valueStr;
-        float value;
+        double value;
 
         // Read the date
         if (!std::getline(ss, date, '|')) 
@@ -114,10 +114,10 @@ void BitcoinExchange::processInput(const std::string& inputFilename) const
         date = date.substr(date.find_first_not_of(" \t"), date.find_last_not_of(" \t") - date.find_first_not_of(" \t") + 1);
         valueStr = valueStr.substr(valueStr.find_first_not_of(" \t"), valueStr.find_last_not_of(" \t") - valueStr.find_first_not_of(" \t") + 1);
 
-        // Convert value to float
+        // Convert value to double
         try 
         {
-            value = customStof(valueStr);
+            value = customStod(valueStr);
         } 
         catch (const std::exception& e) 
         {
@@ -145,20 +145,47 @@ void BitcoinExchange::processInput(const std::string& inputFilename) const
         }
 
         // Process the input
-        std::map<std::string, float>::const_iterator it = btcData.lower_bound(date); // explainaion below
-        if (it != btcData.end() && it->first == date) 
-            std::cout << date << " => " << value << " = " << value * it->second << std::endl;
-        
+        std::map<std::string, double>::const_iterator it = btcData.lower_bound(date);
+        double result = 0;
+        if (it != btcData.end() && it->first == date)
+        {
+            result = value * it->second;
+        }
         else if (it != btcData.begin()) 
         {
             --it;
-            std::cout << date << " => " << value << " = " << value * it->second << std::endl;
-        } 
+            result = value * it->second;
+        }
         else
+        {
             std::cerr << "Error: date not found in database." << std::endl;
+            continue;
+        }
+
+        // Check if result exceeds INT_MAX before casting
+        if (result > static_cast<double>(INT_MAX)) 
+        {
+            std::cout << std::fixed << std::setprecision(2) << date << " => " << value << " = Overflow" << std::endl;
+        }
+        else
+        {
+            std::cout << std::fixed << std::setprecision(2) << date << " => " << value << " = " << result << std::endl;
+        }
     }
     file.close();
 }
+
+double BitcoinExchange::customStod(const std::string& str) const 
+{
+    std::istringstream iss(str);
+    double result;
+    iss >> result;
+    // Check for any remaining characters after the float value
+    if (iss.fail() || !iss.eof() || iss.peek() != std::char_traits<char>::eof())
+        throw std::invalid_argument("Invalid float value");
+    return result;
+}
+
 
 float BitcoinExchange::customStof(const std::string& str) const 
 {
